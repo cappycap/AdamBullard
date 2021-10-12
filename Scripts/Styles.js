@@ -1,5 +1,4 @@
 import { Dimensions, Appearance, StyleSheet } from 'react-native'
-import { set, get, getTTL, ttl } from '../Scripts/Storage.js'
 
 // Unchanging stylesheets and elements.
 export const windowWidth = Dimensions.get('window').width
@@ -15,8 +14,8 @@ export const btnColors = {
 }
 
 export const colors = {
-    mainBackground: '#1e20d',
-    secondaryBackground: '2c2d32',
+    mainBackground: '#1e201d',
+    secondaryBackground: '#2c2d32',
     mainTextColor: '#eaeaea',
     mainHighlight: '#bb9457',
     secondaryHighlight: '#2f3f62',
@@ -25,6 +24,53 @@ export const colors = {
 export const app = StyleSheet.create({
   container: {
     flex:1
+  }
+})
+
+export const header = StyleSheet.create({
+  header: {
+    marginLeft:50,
+    marginRight:50,
+    flexDirection: 'row',
+    alignItems:'center',
+    justifyContent:'space-between'
+  },
+  headerTitle: {
+    color:colors.mainTextColor,
+    fontFamily:'PoppinsSemiBold',
+    fontSize:30,
+  },
+  headerList: {
+    flexDirection: 'row',
+    alignItems:'flex-start',
+    justifyContent: 'center',
+    marginTop:11
+  },
+  headerListItem: {
+    marginLeft:15,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  headerListText: {
+    color:colors.mainTextColor,
+    fontFamily:'Poppins',
+    fontSize:24,
+  },
+  headerListItemDot: {
+    padding:4,
+    borderRadius:10,
+    backgroundColor:colors.mainHighlight
+  }
+})
+
+export const services = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    padding:50,
+    backgroundColor:colors.secondaryBackground
   }
 })
 
