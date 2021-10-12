@@ -36,7 +36,7 @@ export const header = StyleSheet.create({
     justifyContent:'space-between'
   },
   headerTitle: {
-    color:colors.mainTextColor,
+    color:colors.mainHighlight,
     fontFamily:'PoppinsSemiBold',
     fontSize:30,
   },
@@ -69,8 +69,88 @@ export const services = StyleSheet.create({
     backgroundColor:colors.mainBackground
   },
   upper: {
-    padding:50,
+    paddingTop:50,
+    paddingLeft:50,
+    paddingRight:50,
     backgroundColor:colors.secondaryBackground
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:18,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'justify'
+  },
+  jumboRow: {
+    flexDirection: 'row',
+    paddingTop:0,
+    paddingLeft:50,
+    paddingRight:50
+  },
+  me: {
+    flex:1,
+  },
+  meInfo: {
+    flex:1,
+    justifyContent:'flex-end'
+  },
+  meImage: {
+    width:420,
+    height:420,
+    left:-70
+  },
+  socials: {
+    flexDirection: 'row',
+    alignItems: 'flex-start'
+  },
+  introduction: {
+    flex:1,
+    justifyContent: 'flex-end',
+    marginBottom:70
+  },
+  socialIcon: {
+    marginRight:10
+  },
+  lower: {
+    padding:20,
+  },
+  boxRow: {
+    flexDirection: 'row',
+    alignItems:'flex-start',
+    justifyContent:'center',
+    marginTop:20
+  },
+  box: {
+    flex:1,
+    padding:20,
+    borderColor:colors.mainHighlight,
+    borderRadius:20,
+    borderWidth:0,
+    backgroundColor:colors.secondaryBackground,
+    alignItems:'center'
+  },
+  boxSpacer: {
+    width:20
+  },
+  boxHeader: {
+    borderBottomWidth:2,
+    borderBottomColor:colors.mainHighlight,
+    width:'100%',
+    paddingBottom:5,
+    marginBottom:5,
+    textAlign:'center'
   }
 })
 
