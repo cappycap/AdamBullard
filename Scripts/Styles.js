@@ -17,7 +17,7 @@ export const colors = {
     mainBackground: '#1e201d',
     secondaryBackground: '#2c2d32',
     mainTextColor: '#eaeaea',
-    mainHighlight: '#D5B89F',
+    mainHighlight: '#A4C1EC',
     secondaryHighlight: '#2f3f62',
 }
 
@@ -125,7 +125,7 @@ export const services = StyleSheet.create({
     marginRight:10
   },
   lower: {
-    padding:20,
+    padding:50,
   },
   boxRow: {
     flexDirection: 'row',
@@ -143,13 +143,13 @@ export const services = StyleSheet.create({
     alignItems:'center'
   },
   boxSpacer: {
-    width:20
+    width:50
   },
   boxHeader: {
     borderBottomWidth:2,
     borderBottomColor:colors.mainHighlight,
-    paddingBottom:5,
-    marginBottom:5,
+    paddingBottom:10,
+    marginBottom:10,
     textAlign:'center'
   }
 })
