@@ -93,6 +93,9 @@ export const services = StyleSheet.create({
     opacity:0.6,
     textAlign:'justify'
   },
+  textCentered: {
+    textAlign:'center',
+  },
   jumboRow: {
     flexDirection: 'row',
     paddingTop:0,
@@ -109,7 +112,7 @@ export const services = StyleSheet.create({
   meImage: {
     width:375,
     height:420,
-    left:40,
+    left:20,
     marginTop:20
   },
   socials: {
@@ -151,6 +154,16 @@ export const services = StyleSheet.create({
     paddingBottom:10,
     marginBottom:10,
     textAlign:'center'
+  },
+  languageImageRow: {
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent: 'center',
+    marginTop:20
+  },
+  languageImage: {
+    width:64,
+    height:64
   }
 })
 

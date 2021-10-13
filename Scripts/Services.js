@@ -75,17 +75,81 @@ export default function Services() {
             <View style={styles.boxRow}>
                 <View style={styles.box}>
                     <Text style={[styles.bigText,styles.boxHeader]}>Full Stack Web and Mobile</Text>
-                    <Text style={styles.pText}>Lorem ipsum dolor sit amet, consect etur adipisc ing. Lorem ipsum dolor sit amet, consect etur adipisc ing.</Text>
-                </View>
-                <View style={styles.boxSpacer}></View>
-                <View style={styles.box}>
-                    <Text style={[styles.bigText,styles.boxHeader]}>UI/UX Design</Text>
-                    <Text style={styles.pText}>Lorem ipsum dolor sit amet, consect etur adipisc ing. Lorem ipsum dolor sit amet, consect etur adipisc ing.</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>
+                        Creating effective and secure applications with these languages:
+                    </Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/language-logos/react.png')}
+                            style={styles.languageImage}
+                        />
+                        <Image 
+                            source={require('../assets/language-logos/swift.png')}
+                            style={styles.languageImage}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>React, React Native, Swift</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/language-logos/node.png')}
+                            style={styles.languageImage}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>Node.js</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/language-logos/mysql.png')}
+                            style={[styles.languageImage,{marginRight:5}]}
+                        />
+                        <Image 
+                            source={require('../assets/language-logos/postgresql.png')}
+                            style={styles.languageImage}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>MySQL, PostgreSQL</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/language-logos/apache.png')}
+                            style={styles.languageImage}
+                        />
+                        <Image 
+                            source={require('../assets/language-logos/nginx.png')}
+                            style={styles.languageImage}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>Apache, Nginx</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>
                 <View style={styles.box}>
                     <Text style={[styles.bigText,styles.boxHeader]}>Prototype Development</Text>
-                    <Text style={styles.pText}>Lorem ipsum dolor sit amet, consect etur adipisc ing. Lorem ipsum dolor sit amet, consect etur adipisc ing.</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Improving or creating a product through customer input.</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/product-development/ab.png')}
+                            style={[styles.languageImage,{marginRight:5}]}
+                        />
+                        <Image 
+                            source={require('../assets/product-development/magnify.png')}
+                            style={styles.languageImage}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>In-App Customer Feedback</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/product-development/interviewing.png')}
+                            style={[styles.languageImage,{marginRight:5}]}
+                        />
+                        <Image 
+                            source={require('../assets/product-development/person.png')}
+                            style={[styles.languageImage,{marginRight:5}]}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>Customer Engagement & Identification</Text>
+                </View>
+                <View style={styles.boxSpacer}></View>
+                <View style={styles.box}>
+                    <Text style={[styles.bigText,styles.boxHeader]}>UI/UX Design</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Designing intuitive, consistent, and beautiful online experiences.</Text>
                 </View>
             </View>
         </View>
