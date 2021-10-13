@@ -92,11 +92,8 @@ export default function Services() {
                     <View style={styles.languageImageRow}>
                         <Image 
                             source={require('../assets/language-logos/node.png')}
-                            style={styles.languageImage}
+                            style={[styles.languageImage,{marginRight:5}]}
                         />
-                    </View>
-                    <Text style={[styles.pText,styles.textCentered]}>Node.js</Text>
-                    <View style={styles.languageImageRow}>
                         <Image 
                             source={require('../assets/language-logos/mysql.png')}
                             style={[styles.languageImage,{marginRight:5}]}
@@ -106,7 +103,7 @@ export default function Services() {
                             style={styles.languageImage}
                         />
                     </View>
-                    <Text style={[styles.pText,styles.textCentered]}>MySQL, PostgreSQL</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Node.js, MySQL, PostgreSQL</Text>
                     <View style={styles.languageImageRow}>
                         <Image 
                             source={require('../assets/language-logos/apache.png')}
@@ -114,15 +111,19 @@ export default function Services() {
                         />
                         <Image 
                             source={require('../assets/language-logos/nginx.png')}
+                            style={[styles.languageImage,{marginRight:14}]}
+                        />
+                        <Image 
+                            source={require('../assets/language-logos/docker.png')}
                             style={styles.languageImage}
                         />
                     </View>
-                    <Text style={[styles.pText,styles.textCentered]}>Apache, Nginx</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Apache, Nginx, Docker</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>
                 <View style={styles.box}>
                     <Text style={[styles.bigText,styles.boxHeader]}>Prototype Development</Text>
-                    <Text style={[styles.pText,styles.textCentered]}>Improving or creating a product through customer input.</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Improving or creating a product through customer input via:</Text>
                     <View style={styles.languageImageRow}>
                         <Image 
                             source={require('../assets/product-development/ab.png')}
@@ -133,18 +134,29 @@ export default function Services() {
                             style={styles.languageImage}
                         />
                     </View>
-                    <Text style={[styles.pText,styles.textCentered]}>In-App Customer Feedback</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>In-Service Customer Feedback</Text>
                     <View style={styles.languageImageRow}>
                         <Image 
                             source={require('../assets/product-development/interviewing.png')}
-                            style={[styles.languageImage,{marginRight:5}]}
+                            style={[styles.languageImage,{marginRight:10}]}
                         />
                         <Image 
                             source={require('../assets/product-development/person.png')}
-                            style={[styles.languageImage,{marginRight:5}]}
+                            style={[styles.languageImage,{marginRight:0}]}
                         />
                     </View>
-                    <Text style={[styles.pText,styles.textCentered]}>Customer Engagement & Identification</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Customer/Problem Identification</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/product-development/bmc.png')}
+                            style={[styles.languageImage,{marginRight:8}]}
+                        />
+                        <Image 
+                            source={require('../assets/product-development/graph.png')}
+                            style={[styles.languageImage,{marginLeft:2}]}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>Business & Journey Modeling</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>
                 <View style={styles.box}>
