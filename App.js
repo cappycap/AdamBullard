@@ -8,8 +8,8 @@ import { useFonts } from 'expo-font'
 
 // Import pages.
 import Services from './Scripts/Services.js'
-import Works from './Scripts/Works.js'
-import Philosophy from './Scripts/Philosophy.js'
+import Portfolio from './Scripts/Portfolio.js'
+import Papers from './Scripts/Papers.js'
 import Contact from './Scripts/Contact.js'
 
 // Linking configuration.
@@ -18,8 +18,8 @@ const linking = {
   config: {
     screens: {
       Services: '',
-      Works: 'works',
-      Philosophy: 'philosophy',
+      Portfolio: 'portfolio',
+      Papers: 'papers',
       Contact: 'contact'
     }
   }
@@ -41,8 +41,8 @@ export default function App() {
   return (<NavigationContainer linking={linking}>
     <Stack.Navigator headerMode="none" initialRouteName="Services">
       <Stack.Screen name="Services" component={Services} options={{title:'Services - Adam Bullard'}} />
-      <Stack.Screen name="Works" component={Works} options={{title:'Works - Adam Bullard'}} />
-      <Stack.Screen name="Philosophy" component={Philosophy} options={{title:'Philosophy - Adam Bullard'}} />
+      <Stack.Screen name="Portfolio" component={Portfolio} options={{title:'Portfolio - Adam Bullard'}} />
+      <Stack.Screen name="Papers" component={Papers} options={{title:'Papers - Adam Bullard'}} />
       <Stack.Screen name="Contact" component={Contact} options={{title:'Contact - Adam Bullard'}} />
     </Stack.Navigator>
   </NavigationContainer>)

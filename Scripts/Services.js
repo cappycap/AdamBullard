@@ -54,7 +54,7 @@ export default function Services() {
                 </View>
                 <View style={styles.me}>
                     <Image 
-                        source={require('../assets/me.png')}
+                        source={require('../assets/me-point.png')}
                         style={styles.meImage}
                     />
                 </View>
@@ -64,8 +64,7 @@ export default function Services() {
                         <Text style={styles.bigText}>Building and exploring...</Text>
                         <Text style={styles.pText}>
                             I am a founder, mentor, and developer graduating with a B.S. in Computer Science in Spring 2022. 
-                            I believe in using technology and empathy to tackle our world's most pressing problems, 
-                            empowering others, and following my personal passions.
+                            I believe in using technology and empathy to tackle our world's most pressing problems.
                         </Text>
                     </View>
                 </View>
@@ -75,7 +74,7 @@ export default function Services() {
             <Text style={styles.categoryText}>- Services Offered</Text>
             <View style={styles.boxRow}>
                 <View style={styles.box}>
-                    <Text style={[styles.bigText,styles.boxHeader]}>Full Stack Development</Text>
+                    <Text style={[styles.bigText,styles.boxHeader]}>Full Stack Web and Mobile</Text>
                     <Text style={styles.pText}>Lorem ipsum dolor sit amet, consect etur adipisc ing. Lorem ipsum dolor sit amet, consect etur adipisc ing.</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>

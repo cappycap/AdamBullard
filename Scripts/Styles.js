@@ -17,7 +17,7 @@ export const colors = {
     mainBackground: '#1e201d',
     secondaryBackground: '#2c2d32',
     mainTextColor: '#eaeaea',
-    mainHighlight: '#bb9457',
+    mainHighlight: '#D5B89F',
     secondaryHighlight: '#2f3f62',
 }
 
@@ -38,7 +38,7 @@ export const header = StyleSheet.create({
   headerTitle: {
     color:colors.mainHighlight,
     fontFamily:'PoppinsSemiBold',
-    fontSize:30,
+    fontSize:32,
   },
   headerList: {
     flexDirection: 'row',
@@ -107,9 +107,10 @@ export const services = StyleSheet.create({
     justifyContent:'flex-end'
   },
   meImage: {
-    width:420,
+    width:375,
     height:420,
-    left:-70
+    left:40,
+    marginTop:20
   },
   socials: {
     flexDirection: 'row',
@@ -118,7 +119,7 @@ export const services = StyleSheet.create({
   introduction: {
     flex:1,
     justifyContent: 'flex-end',
-    marginBottom:70
+    marginBottom:140
   },
   socialIcon: {
     marginRight:10
@@ -147,7 +148,6 @@ export const services = StyleSheet.create({
   boxHeader: {
     borderBottomWidth:2,
     borderBottomColor:colors.mainHighlight,
-    width:'100%',
     paddingBottom:5,
     marginBottom:5,
     textAlign:'center'

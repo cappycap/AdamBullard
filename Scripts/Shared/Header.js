@@ -23,12 +23,12 @@ export default function Header(props) {
             link: '/'
         },
         {
-            name: 'Works',
-            link: '/works'
+            name: 'Portfolio',
+            link: '/portfolio'
         },
         {
-            name: 'Philosophy',
-            link: '/philosophy'
+            name: 'Papers',
+            link: '/papers'
         },
         {
             name: 'Contact',
