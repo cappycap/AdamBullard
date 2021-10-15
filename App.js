@@ -19,7 +19,7 @@ const linking = {
     screens: {
       Services: '',
       Portfolio: 'portfolio',
-      Papers: 'papers',
+      Papers: 'papers/:short?',
       Contact: 'contact'
     }
   }

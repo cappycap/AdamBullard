@@ -60,7 +60,15 @@ export const header = StyleSheet.create({
     padding:4,
     borderRadius:10,
     backgroundColor:colors.mainHighlight
-  }
+  },
+  socials: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginLeft:50
+  },
+  socialIcon: {
+    marginRight:10
+  },
 })
 
 export const services = StyleSheet.create({
@@ -103,7 +111,18 @@ export const services = StyleSheet.create({
     paddingRight:50
   },
   me: {
+    alignItems:'flex-end',
     flex:1,
+  },
+  circle: {
+    backgroundColor:colors.mainHighlight,
+    borderRadius:400,
+    width:320,
+    height:320,
+    left:-200,
+    bottom:-100,
+    zIndex:1,
+    position:'absolute'
   },
   meInfo: {
     flex:1,
@@ -112,8 +131,7 @@ export const services = StyleSheet.create({
   meImage: {
     width:375,
     height:420,
-    left:20,
-    marginTop:20
+    marginRight:140
   },
   socials: {
     flexDirection: 'row',
@@ -122,13 +140,16 @@ export const services = StyleSheet.create({
   introduction: {
     flex:1,
     justifyContent: 'flex-end',
-    marginBottom:140
+    marginBottom:160
   },
   socialIcon: {
     marginRight:10
   },
   lower: {
-    padding:50,
+    paddingLeft:100,
+    paddingRight:100,
+    paddingTop:50,
+    paddingBottom:50,
   },
   boxRow: {
     flexDirection: 'row',
@@ -167,8 +188,62 @@ export const services = StyleSheet.create({
   }
 })
 
+export const portfolio = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    paddingTop:50,
+    paddingLeft:50,
+    paddingRight:50,
+    paddingBottom:20,
+    backgroundColor:colors.secondaryBackground
+  }
+})
+
+export const papers = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    paddingTop:50,
+    paddingLeft:50,
+    paddingRight:50,
+    paddingBottom:20,
+    backgroundColor:colors.secondaryBackground
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:18,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'justify'
+  },
+  lower: {
+    paddingLeft:100,
+    paddingRight:100,
+    paddingTop:50,
+    paddingBottom:50,
+  },
+})
+
 export const empty = StyleSheet.create({
   container: {
-    flex:1
+    flex:1,
+    backgroundColor:colors.mainBackground
   }
 })

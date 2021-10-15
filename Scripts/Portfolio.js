@@ -5,16 +5,26 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { Button } from 'react-native-elements'
-import { empty } from './Styles.js'
+import { portfolio, colors } from './Styles.js'
+
+import Header from './Shared/Header.js'
 
 export default function Portfolio() {
 
-    const [styles, setStyles] = useState(empty)
+    const [styles, setStyles] = useState(portfolio)
 
     useEffect(() => {
         
     }, [])
 
-    return (<View></View>)
+    const headerState = {
+        currentPage: 'Portfolio'
+    }
+
+    return (<View style={styles.container}>
+        <View style={styles.upper}>
+            <Header {...headerState} />
+        </View>
+    </View>)
 
 }
