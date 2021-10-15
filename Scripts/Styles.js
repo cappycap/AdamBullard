@@ -5,7 +5,7 @@ export const windowWidth = Dimensions.get('window').width
 export const windowHeight = Dimensions.get('window').height
 
 export const btnColors = {
-  primary:'#007ac8',
+  primary:'#A4C1EC',
   caution:'#f1c40f',
   danger:'#e74c3c',
   success:'#2ecc71',
@@ -143,7 +143,7 @@ export const services = StyleSheet.create({
     marginBottom:160
   },
   socialIcon: {
-    marginRight:10
+    marginRight:10  
   },
   lower: {
     paddingLeft:100,
@@ -239,6 +239,30 @@ export const papers = StyleSheet.create({
     paddingTop:50,
     paddingBottom:50,
   },
+  paperContainer: {
+    backgroundColor:colors.secondaryBackground,
+    borderRadius:20,
+    flexDirection: 'row',
+    marginBottom:20
+  },
+  paperImage: {
+    height:200,
+    width:400,
+    borderTopLeftRadius:20,
+    borderBottomLeftRadius:20,
+  },
+  paperInner: {
+    padding:20,
+  },
+  link: {
+    color:btnColors.primary,
+    marginLeft:5,
+    opacity:1
+  },
+  paperNotFound: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
 })
 
 export const empty = StyleSheet.create({
