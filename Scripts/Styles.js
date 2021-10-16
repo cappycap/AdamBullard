@@ -71,6 +71,33 @@ export const header = StyleSheet.create({
   },
 })
 
+export const footer = StyleSheet.create({
+  footer: {
+    paddingLeft:50,
+    paddingRight:50,
+    paddingTop:20,
+    paddingBottom:20,
+    flexDirection: 'row',
+    alignItems:'center',
+    justifyContent:'flex-end',
+    backgroundColor:colors.secondaryBackground,
+  },
+  footerSection: {
+    flex:1
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'justify'
+  },
+  link: {
+    color:btnColors.primary,
+    opacity:1
+  },
+})
+
 export const services = StyleSheet.create({
   container: {
     flex:1,
@@ -84,7 +111,7 @@ export const services = StyleSheet.create({
   },
   categoryText: {
     fontFamily:'PoppinsSemiBold',
-    fontSize:18,
+    fontSize:22,
     color:colors.mainTextColor,
     opacity:0.6,
     letterSpacing:3
@@ -150,6 +177,7 @@ export const services = StyleSheet.create({
     paddingRight:100,
     paddingTop:50,
     paddingBottom:50,
+    flex:1,
   },
   boxRow: {
     flexDirection: 'row',
@@ -216,7 +244,7 @@ export const papers = StyleSheet.create({
   },
   categoryText: {
     fontFamily:'PoppinsSemiBold',
-    fontSize:18,
+    fontSize:22,
     color:colors.mainTextColor,
     opacity:0.6,
     letterSpacing:3
@@ -224,6 +252,11 @@ export const papers = StyleSheet.create({
   bigText: {
     fontFamily:'PoppinsSemiBold',
     fontSize:26,
+    color:colors.mainTextColor,
+  },
+  titleText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:30,
     color:colors.mainTextColor,
   },
   pText: {
@@ -238,6 +271,7 @@ export const papers = StyleSheet.create({
     paddingRight:100,
     paddingTop:50,
     paddingBottom:50,
+    flex:1,
   },
   paperContainer: {
     backgroundColor:colors.secondaryBackground,
@@ -262,6 +296,41 @@ export const papers = StyleSheet.create({
   paperNotFound: {
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  titleRow: {
+    flexDirection:'row',
+    alignItems:'center',
+  },
+  paperTop: {
+    flexDirection:'row',
+    marginBottom:20,
+    borderBottomWidth:2,
+    borderBottomColor:colors.secondaryBackground,
+    paddingBottom:20
+  },
+  paperTopInfo: {
+    flex:1,
+    justifyContent: 'space-between'
+  },
+  paperImageLarge: {
+    width:500,
+    height:250,
+    borderRadius:20
+  },
+  viewPdfButton: {
+    backgroundColor:btnColors.primary,
+    borderRadius:10,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop:10,
+    paddingLeft:20,
+    alignSelf:'flex-start'
+  },
+  viewPdfButtonTitle: {
+    fontFamily:'Poppins',
+    color:'#fff',
+    fontSize:20,
+    textAlign:'center'
   }
 })
 

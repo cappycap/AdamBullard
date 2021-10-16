@@ -8,6 +8,7 @@ import { Button, Icon } from 'react-native-elements'
 import { services, colors } from './Styles.js'
 
 import Header from './Shared/Header.js'
+import Footer from './Shared/Footer.js'
 
 export default function Services() {
 
@@ -142,6 +143,7 @@ export default function Services() {
                 </View>
             </View>
         </Animated.View>
+        <Footer />
     </View>)
 
 }

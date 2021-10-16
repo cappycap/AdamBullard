@@ -4,17 +4,18 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, Animated } from 'react
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
-import { Button } from 'react-native-elements'
+import { Button, Icon } from 'react-native-elements'
 import { papers, colors } from './Styles.js'
 
 import Header from './Shared/Header.js'
+import Footer from './Shared/Footer.js'
 
 export default function Papers(props) {
 
     const linkTo = useLinkTo()
 
     const [styles, setStyles] = useState(papers)
-    const [fadeAnim] = useState(new Animated.Value(0))
+    const [fadeAnim, setFadeAnim] = useState(new Animated.Value(0))
 
     const [short, setShort] = useState(null)
     const [paperIndex, setPaperIndex] = useState(null)
@@ -22,11 +23,17 @@ export default function Papers(props) {
         {
             Id: 1,
             Name: 'Digital Human Rights Manifesto',
-            Abstract: 'An amazing manifesto.',
-            Link: '',
+            Link: 'http://www.africau.edu/images/default/sample.pdf',
             Short: 'digital-human-rights-manifesto',
             Description: 'An amazing manifesto. Get ready for the world to change.',
             Image: require('../assets/paper-images/digital-human-rights.jpeg'),
+            Sections: [
+                {
+                    Title: 'Abstract',
+                    Content: 'On tech in society, to roughly summarize I think we can use technology and automation to completely upend our system over the course of decades and do it better... but it would take a reform in many governments and economies, including in the US.\n\n'+
+                    'We would have to start by breaking up or outvoting two party systems, corrupt politicians, corporatist influence via lobbying, and impose term limits. I propose a larger set of parties, 5-10 ideally, ranging the political spectrum. Parties have to work together to get legislation passed, pulling a majority of parties into their corner. This moves more power to the people, and will hopefully result in a more equitable and representative system, assuming the members of that system are informed and involved enough to care about their vote. Ideally, this type of legislation would encourage people to vote more as a secondary effect...'
+                }
+            ]
         }
     ])
 
@@ -45,13 +52,17 @@ export default function Papers(props) {
             }
         }
 
+        fadeIn()
+
+    }, [])
+
+    const fadeIn = () => {
         Animated.timing(fadeAnim, {
             toValue: 1,
             duration: 800,
         }).start()
-
-    }, [])
-
+    }
+ 
     const viewPaper = (i) => {
         setShort(papersData[i].Short)
         setPaperIndex(i)
@@ -101,13 +112,48 @@ export default function Papers(props) {
                             Tap to go back.
                         </TouchableOpacity>
                     </View>) || (<View>
-                    
+                        <View style={styles.paperTop}>
+                            <View style={styles.paperTopInfo}>
+                                <View>
+                                    <View style={styles.titleRow}>
+                                        <Icon
+                                            name='chevron-back'
+                                            type='ionicon'
+                                            size={40}
+                                            color={colors.mainTextColor}
+                                            onPress={() => goBack()}
+                                        />
+                                        <Text style={styles.titleText}>{papersData[paperIndex].Name}</Text>
+                                    </View>
+                                    <Text style={styles.pText}>{papersData[paperIndex].Description}</Text>
+                                </View>
+                                <Button 
+                                    title={'View PDF'}
+                                    buttonStyle={styles.viewPdfButton}
+                                    titleStyle={styles.viewPdfButtonTitle}
+                                    onPress={() => window.open(papersData[paperIndex].Link, '_blank')}
+                                />
+                            </View>
+                            <Image 
+                                style={styles.paperImageLarge}
+                                source={papersData[paperIndex].Image}
+                            />
+                        </View>
+                        {papersData[paperIndex].Sections.map((section, index) => {
+
+                            return (<View style={styles.paperSection} key={'paperSection_'+index}>
+                                <Text style={styles.categoryText}>- {section.Title}</Text>
+                                <Text style={styles.pText}>{section.Content}</Text>
+                            </View>)
+
+                        })}
                     </View>)}
                 </View>)}
             </View>) || (<View style={{paddingTop:10}}>
                 <Text style={styles.categoryText}>No papers yet, check back later!</Text>
             </View>)}
         </Animated.View>
+        <Footer />
     </View>)
 
 }
