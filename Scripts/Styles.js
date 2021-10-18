@@ -5,7 +5,7 @@ export const windowWidth = Dimensions.get('window').width
 export const windowHeight = Dimensions.get('window').height
 
 export const btnColors = {
-  primary:'#A4C1EC',
+  primary:'#a4c1ec',
   caution:'#f1c40f',
   danger:'#e74c3c',
   success:'#2ecc71',
