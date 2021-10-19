@@ -106,7 +106,7 @@ export default function Services() {
                 <View style={styles.boxSpacer}></View>
                 <View style={styles.box}>
                     <Text style={[styles.bigText,styles.boxHeader]}>Prototype Development</Text>
-                    <Text style={[styles.pText,styles.textCentered]}>Improving or creating a product through customer input via:</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Improving or creating a product through iterative processes:</Text>
                     <View style={styles.languageImageRow}>
                         <Image 
                             source={require('../assets/product-development/ab.png')}
