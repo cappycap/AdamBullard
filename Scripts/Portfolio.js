@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Animated } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
@@ -12,9 +12,17 @@ import Header from './Shared/Header.js'
 export default function Portfolio() {
 
     const [styles, setStyles] = useState(portfolio)
+    const [fadeAnim, setFadeAnim] = useState(new Animated.Value(0))
+
+    const fadeIn = () => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            duration: 800,
+        }).start()
+    }
 
     useEffect(() => {
-        
+        fadeIn()
     }, [])
 
     const headerState = {
@@ -25,6 +33,10 @@ export default function Portfolio() {
         <View style={styles.upper}>
             <Header {...headerState} />
         </View>
+        <Animated.View style={[styles.lower,{opacity:fadeAnim}]}>
+            <Text style={styles.categoryText}>- Projects</Text>
+            <Text style={[styles.pText,{marginBottom:20}]}>This is a new site I made for CSCI 397A, so my portfolio coming soon!</Text>
+        </Animated.View>
     </View>)
 
 }

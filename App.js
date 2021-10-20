@@ -35,6 +35,7 @@ export default function App() {
     Poppins: require('./assets/fonts/Poppins.ttf'),
     PoppinsSemiBold: require('./assets/fonts/Poppins-SemiBold.ttf'),
     PoppinsBold: require('./assets/fonts/Poppins-Bold.ttf'),
+    PoppinsItalic: require('./assets/fonts/Poppins-Italic.ttf'),
     OCRA: require('./assets/fonts/OCRA.ttf')
   })
 

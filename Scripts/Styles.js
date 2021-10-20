@@ -227,7 +227,33 @@ export const portfolio = StyleSheet.create({
     paddingRight:50,
     paddingBottom:20,
     backgroundColor:colors.secondaryBackground
-  }
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:22,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'justify'
+  },
+  lower: {
+    paddingLeft:100,
+    paddingRight:100,
+    paddingTop:50,
+    paddingBottom:50,
+    flex:1,
+  },
 })
 
 export const papers = StyleSheet.create({
@@ -247,7 +273,8 @@ export const papers = StyleSheet.create({
     fontSize:22,
     color:colors.mainTextColor,
     opacity:0.6,
-    letterSpacing:3
+    letterSpacing:3,
+    marginBottom:5
   },
   bigText: {
     fontFamily:'PoppinsSemiBold',
@@ -331,7 +358,24 @@ export const papers = StyleSheet.create({
     color:'#fff',
     fontSize:20,
     textAlign:'center'
-  }
+  },
+  paperSection: {
+    marginBottom:30
+  },
+  paperSectionImage: {
+    alignSelf:'center'
+  },
+  paperSectionCaption: {
+    fontFamily:'PoppinsItalic',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'center'
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    alignItems:'center'
+  },
 })
 
 export const empty = StyleSheet.create({
