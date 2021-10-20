@@ -193,12 +193,6 @@ export default function Papers(props) {
                                 </View>
                                 <View style={styles.buttonRow}>
                                     <Button 
-                                        title={'View PDF'}
-                                        buttonStyle={[styles.viewPdfButton,{marginRight:10}]}
-                                        titleStyle={styles.viewPdfButtonTitle}
-                                        onPress={() => window.open(papersData[paperIndex].Link, '_blank')}
-                                    />
-                                    <Button 
                                         title={'Download JSON'}
                                         buttonStyle={styles.viewPdfButton}
                                         titleStyle={styles.viewPdfButtonTitle}

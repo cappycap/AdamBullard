@@ -100,8 +100,15 @@ export default function Services() {
                 </View>
                 <View style={styles.boxSpacer}></View>
                 <View style={styles.box}>
-                    <Text style={[styles.bigText,styles.boxHeader]}>UI/UX Design</Text>
-                    <Text style={[styles.pText,styles.textCentered]}>Designing intuitive, consistent, and beautiful online experiences.</Text>
+                    <Text style={[styles.bigText,styles.boxHeader]}>Crypto & Blockchain</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Helping test and build the latest blockchain technologies.</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/crypto/solidity.png')}
+                            style={[styles.languageImage]}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>Solidity Smart Contracts</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>
                 <View style={styles.box}>

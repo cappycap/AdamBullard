@@ -378,6 +378,47 @@ export const papers = StyleSheet.create({
   },
 })
 
+
+export const contact = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    paddingTop:50,
+    paddingLeft:50,
+    paddingRight:50,
+    backgroundColor:colors.secondaryBackground
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:22,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'justify'
+  },
+  lower: {
+    paddingLeft:100,
+    paddingRight:100,
+    paddingTop:50,
+    paddingBottom:50,
+    flex:1,
+  },
+})
+
+
 export const empty = StyleSheet.create({
   container: {
     flex:1,
