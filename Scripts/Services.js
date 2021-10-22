@@ -5,37 +5,58 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { Button, Icon } from 'react-native-elements'
-import { services, colors } from './Styles.js'
+import { services, servicesMobile, colors } from './Styles.js'
 
 import Header from './Shared/Header.js'
 import Footer from './Shared/Footer.js'
+import useWindowDimensions from './Shared/useWindowDimensions.js'
 
 export default function Services() {
 
+    // Variables for handling styling.
+    const { height, width } = useWindowDimensions()
+    const [firstLoad, setFirstLoad] = useState(true)
     const [styles, setStyles] = useState(services)
+    const widthLimit = 900
+
+    const widthCheck = () => {
+        console.log('widthCheck at ' + width)
+        if (width <= widthLimit) {
+            setStyles(servicesMobile)
+        } else {
+            setStyles(services)
+        }
+    }
+
+    // Animation variables.
     const [fadeAnim] = useState(new Animated.Value(0))
 
-    useEffect(() => {
+    const fadeIn = () => {
         Animated.timing(fadeAnim, {
             toValue: 1,
-            duration: 1500,
+            duration: 800,
         }).start()
-    }, [])
-
-    const headerState = {
-        currentPage: 'Services'
     }
+ 
+    useEffect(() => {
+        if (firstLoad) {
+            fadeIn()
+            setFirstLoad(false)
+        }
+        widthCheck()
+    }, [width])
+
 
     return (<View style={styles.container}>
         <View style={styles.upper}>
-            <Header {...headerState} />
+            <Header currentPage={'Services'} width={width} widthLimit={widthLimit} />
             <View style={styles.jumboRow}>
-                <View style={styles.me}>
+                {width >= widthLimit && (<View style={styles.me}>
                     <Animated.Image 
                         source={require('../assets/me-point.png')}
                         style={[styles.meImage,{opacity:fadeAnim}]}
                     />
-                </View>
+                </View>)}
                 <View style={styles.meInfo}>
                     <Animated.View style={[styles.introduction,{opacity:fadeAnim}]}>
                         <Text style={styles.categoryText}>- Introduction</Text>
@@ -50,8 +71,8 @@ export default function Services() {
         </View>
         <Animated.View style={[styles.lower,{opacity:fadeAnim}]}>
             <Text style={styles.categoryText}>- Services Offered</Text>
-            <View style={styles.boxRow}>
-                <View style={styles.box}>
+            <View style={[styles.boxRow]}>
+                <View style={[styles.box]}>
                     <Text style={[styles.bigText,styles.boxHeader]}>Full Stack Web and Mobile</Text>
                     <Text style={[styles.pText,styles.textCentered]}>
                         Creating effective and secure applications with these languages:
@@ -99,7 +120,7 @@ export default function Services() {
                     <Text style={[styles.pText,styles.textCentered]}>Apache, Nginx, Docker</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>
-                <View style={styles.box}>
+                <View style={[styles.box]}>
                     <Text style={[styles.bigText,styles.boxHeader]}>Crypto & Blockchain</Text>
                     <Text style={[styles.pText,styles.textCentered]}>Helping test and build the latest blockchain technologies.</Text>
                     <View style={styles.languageImageRow}>
@@ -111,7 +132,7 @@ export default function Services() {
                     <Text style={[styles.pText,styles.textCentered]}>Solidity Smart Contracts</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>
-                <View style={styles.box}>
+                <View style={[styles.box]}>
                     <Text style={[styles.bigText,styles.boxHeader]}>Prototype Development</Text>
                     <Text style={[styles.pText,styles.textCentered]}>Improving or creating a product through iterative processes:</Text>
                     <View style={styles.languageImageRow}>

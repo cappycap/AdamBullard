@@ -27,6 +27,49 @@ export const app = StyleSheet.create({
   }
 })
 
+export const headerMobile = StyleSheet.create({
+  header: {
+    marginLeft:10,
+    marginRight:10,
+    flexDirection: 'row',
+    alignItems:'center',
+    justifyContent:'space-between'
+  },
+  headerTitle: {
+    color:colors.mainHighlight,
+    fontFamily:'PoppinsSemiBold',
+    fontSize:32,
+  },
+  headerList: {
+    flexDirection: 'row',
+    alignItems:'flex-start',
+    justifyContent: 'center',
+  },
+  headerListItem: {
+    marginLeft:15,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  headerListText: {
+    color:colors.mainTextColor,
+    fontFamily:'Poppins',
+    fontSize:24,
+  },
+  headerListItemDot: {
+    padding:4,
+    borderRadius:10,
+    backgroundColor:colors.mainHighlight
+  },
+  socials: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginLeft:10
+  },
+  socialIcon: {
+    marginRight:10
+  },
+})
+
 export const header = StyleSheet.create({
   header: {
     marginLeft:50,
@@ -98,6 +141,117 @@ export const footer = StyleSheet.create({
   },
 })
 
+export const servicesMobile = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    paddingTop:10,
+    paddingLeft:10,
+    paddingRight:10,
+    backgroundColor:colors.secondaryBackground
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:22,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'left',
+    flexWrap:'wrap'
+  },
+  textCentered: {
+    textAlign:'center',
+  },
+  jumboRow: {
+    flexDirection: 'row',
+    paddingTop:0,
+    paddingLeft:10,
+    paddingRight:10
+  },
+  me: {
+    alignItems:'flex-end',
+    flex:1,
+  },
+  meInfo: {
+    flex:1,
+    justifyContent:'flex-end'
+  },
+  meImage: {
+    width:375,
+    height:420,
+    marginRight:140
+  },
+  socials: {
+    flexDirection: 'row',
+    alignItems: 'flex-start'
+  },
+  introduction: {
+    flex:1,
+    justifyContent: 'flex-end',
+    marginBottom:20,
+    marginTop:20
+  },
+  socialIcon: {
+    marginRight:10  
+  },
+  lower: {
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop:10,
+    paddingBottom:10,
+    flex:1,
+  },
+  boxRow: {
+    flexDirection: 'column',
+    alignItems:'flex-start',
+    justifyContent:'center',
+    marginTop:20
+  },
+  box: {
+    padding:20,
+    borderColor:colors.mainHighlight,
+    borderRadius:20,
+    borderWidth:0,
+    backgroundColor:colors.secondaryBackground,
+    alignItems:'center',
+    marginBottom:20,
+    width:'100%'
+  },
+  boxSpacer: {
+    width:50
+  },
+  boxHeader: {
+    borderBottomWidth:2,
+    borderBottomColor:colors.mainHighlight,
+    paddingBottom:10,
+    marginBottom:10,
+    textAlign:'center'
+  },
+  languageImageRow: {
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent: 'center',
+    marginTop:20
+  },
+  languageImage: {
+    width:64,
+    height:64
+  }
+})
+
 export const services = StyleSheet.create({
   container: {
     flex:1,
@@ -126,7 +280,8 @@ export const services = StyleSheet.create({
     fontSize:20,
     color:colors.mainTextColor,
     opacity:0.6,
-    textAlign:'justify'
+    textAlign:'justify',
+    flexWrap:'wrap'
   },
   textCentered: {
     textAlign:'center',
@@ -167,7 +322,8 @@ export const services = StyleSheet.create({
   introduction: {
     flex:1,
     justifyContent: 'flex-end',
-    marginBottom:160
+    marginBottom:160,
+    marginTop:20
   },
   socialIcon: {
     marginRight:10  
@@ -186,13 +342,13 @@ export const services = StyleSheet.create({
     marginTop:20
   },
   box: {
-    flex:1,
     padding:20,
     borderColor:colors.mainHighlight,
     borderRadius:20,
     borderWidth:0,
     backgroundColor:colors.secondaryBackground,
-    alignItems:'center'
+    alignItems:'center',
+    marginBottom:20,
   },
   boxSpacer: {
     width:50

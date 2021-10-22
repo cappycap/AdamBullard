@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { Icon } from 'react-native-elements'
-import { header, colors } from '../Styles.js'
+import { header, headerMobile, colors } from '../Styles.js'
 
 export default function Header(props) {
 
@@ -15,6 +15,11 @@ export default function Header(props) {
     
     useEffect(() => {
         console.log('header props:',props)
+        if (props.width <= props.widthLimit) {
+            setStyles(headerMobile)
+        } else {
+            setStyles(header)
+        }
     }, [])
 
     const headerListElements = [
@@ -38,8 +43,10 @@ export default function Header(props) {
 
     return (<View>
         <View style={styles.header}>
-            <Text style={styles.headerTitle}>Adam Bullard</Text>
-            <View style={styles.headerList}>
+            <Text style={styles.headerTitle}>
+                {props.width <= props.widthLimit && ('AB') || 'Adam Bullard'}
+            </Text>
+            {props.width <= props.widthLimit && ('yeet') || (<View style={styles.headerList}>
                 {headerListElements.map((item, index) => {
 
                     if (props.currentPage === item.name) {
@@ -62,7 +69,7 @@ export default function Header(props) {
                     }
 
                 })}
-            </View>
+            </View>)}
         </View>
         <View style={styles.socials}>
             <Icon
