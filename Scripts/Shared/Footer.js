@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { Icon } from 'react-native-elements'
-import { footer, colors } from '../Styles.js'
+import { footer, footerMobile, colors } from '../Styles.js'
 
 export default function Footer(props) {
 
@@ -14,18 +14,20 @@ export default function Footer(props) {
     const [styles, setStyles] = useState(footer)
     
     useEffect(() => {
-
+        if (props.width <= props.widthLimit) {
+            setStyles(footerMobile)
+        } else {
+            setStyles(footer)
+        }
     }, [])
 
     return (<View>
         <View style={styles.footer}>
-            <View style={styles.footerSection}>
+            <View>
                 <Text style={styles.pText}>Interested in working together?</Text>
                 <TouchableOpacity onPress={() => linkTo('/contact')}>
                     <Text style={[styles.pText,styles.link]}>Contact me!</Text>
                 </TouchableOpacity>
-            </View>
-            <View style={styles.footerSection}>
             </View>
             <View style={styles.footerSection}>
                 <Text style={[styles.pText,{textAlign:'right'}]}>&copy; Adam Bullard {new Date().getFullYear()}</Text>

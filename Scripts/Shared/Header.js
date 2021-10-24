@@ -12,7 +12,8 @@ export default function Header(props) {
     const linkTo = useLinkTo()
 
     const [styles, setStyles] = useState(header)
-    
+    const [showMobileMenu, setShowMobileMenu] = useState(false)
+
     useEffect(() => {
         console.log('header props:',props)
         if (props.width <= props.widthLimit) {
@@ -41,12 +42,25 @@ export default function Header(props) {
         }
     ]
 
+    const toggleMobileMenu = () => {
+        setShowMobileMenu(!showMobileMenu)
+    }
+
     return (<View>
         <View style={styles.header}>
             <Text style={styles.headerTitle}>
                 {props.width <= props.widthLimit && ('AB') || 'Adam Bullard'}
             </Text>
-            {props.width <= props.widthLimit && ('yeet') || (<View style={styles.headerList}>
+            {props.width <= props.widthLimit && (<View>
+                <Icon
+                    name='menu'
+                    type='ionicon'
+                    size={28}
+                    color={colors.mainTextColor}
+                    style={{marginRight:20}}
+                    onPress={() => toggleMobileMenu()}
+                />
+            </View>) || (<View style={styles.headerList}>
                 {headerListElements.map((item, index) => {
 
                     if (props.currentPage === item.name) {
@@ -97,6 +111,30 @@ export default function Header(props) {
                 onPress={() => window.open('https://github.com/cappycap', '_blank')}
             />
         </View>
+        {showMobileMenu && (<View style={styles.mobileMenu}>
+            {headerListElements.map((item, index) => {
+
+                if (props.currentPage === item.name) {
+                    return (<View style={styles.headerListItem} key={'headerEl_'+index}>
+                        <View style={styles.headerListItemDot}></View>
+                        <Text style={styles.headerListText}>
+                            {item.name}
+                        </Text>
+                    </View>)
+                } else {
+                    return (<TouchableOpacity 
+                        style={styles.headerListItem}
+                        onPress={() => linkTo(item.link)}
+                        key={'headerEl_'+index}
+                    >
+                        <Text style={[styles.headerListText,{opacity:0.6}]}>
+                            {item.name}
+                        </Text>
+                    </TouchableOpacity>)
+                }
+
+            })}
+        </View>)}
     </View>)
 
 }

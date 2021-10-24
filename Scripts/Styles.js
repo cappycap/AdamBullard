@@ -16,6 +16,7 @@ export const btnColors = {
 export const colors = {
     mainBackground: '#1e201d',
     secondaryBackground: '#2c2d32',
+    offSecondaryBackground: '#373840',
     mainTextColor: '#eaeaea',
     mainHighlight: '#A4C1EC',
     secondaryHighlight: '#2f3f62',
@@ -29,26 +30,36 @@ export const app = StyleSheet.create({
 
 export const headerMobile = StyleSheet.create({
   header: {
-    marginLeft:10,
-    marginRight:10,
+    marginTop:10,
     flexDirection: 'row',
     alignItems:'center',
     justifyContent:'space-between'
   },
   headerTitle: {
+    marginLeft:20,
     color:colors.mainHighlight,
     fontFamily:'PoppinsSemiBold',
     fontSize:32,
   },
+  mobileMenu: {
+    backgroundColor:colors.offSecondaryBackground,
+    marginTop:10,
+    marginBottom:10
+  },
   headerList: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems:'flex-start',
     justifyContent: 'center',
   },
   headerListItem: {
     marginLeft:15,
-    justifyContent:'center',
-    alignItems:'center'
+    flex:1,
+    flexDirection: 'row',
+    justifyContent:'flex-end',
+    alignItems:'center',
+    marginRight:20,
+    marginTop:5,
+    marginBottom:5
   },
   headerListText: {
     color:colors.mainTextColor,
@@ -57,13 +68,15 @@ export const headerMobile = StyleSheet.create({
   },
   headerListItemDot: {
     padding:4,
+    marginRight:5,
     borderRadius:10,
     backgroundColor:colors.mainHighlight
   },
   socials: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginLeft:10
+    marginLeft:20,
+    paddingBottom:10
   },
   socialIcon: {
     marginRight:10
@@ -114,6 +127,33 @@ export const header = StyleSheet.create({
   },
 })
 
+export const footerMobile = StyleSheet.create({
+  footer: {
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop:20,
+    paddingBottom:20,
+    flexDirection: 'column',
+    alignItems:'center',
+    justifyContent:'flex-end',
+    backgroundColor:colors.secondaryBackground,
+  },
+  footerSection: {
+    marginTop:10
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'center'
+  },
+  link: {
+    color:btnColors.primary,
+    opacity:1
+  },
+})
+
 export const footer = StyleSheet.create({
   footer: {
     paddingLeft:50,
@@ -147,9 +187,6 @@ export const servicesMobile = StyleSheet.create({
     backgroundColor:colors.mainBackground
   },
   upper: {
-    paddingTop:10,
-    paddingLeft:10,
-    paddingRight:10,
     backgroundColor:colors.secondaryBackground
   },
   categoryText: {
@@ -202,7 +239,9 @@ export const servicesMobile = StyleSheet.create({
     flex:1,
     justifyContent: 'flex-end',
     marginBottom:20,
-    marginTop:20
+    marginTop:20,
+    marginLeft:10,
+    marginRight:10
   },
   socialIcon: {
     marginRight:10  

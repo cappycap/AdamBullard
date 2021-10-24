@@ -171,7 +171,7 @@ export default function Services() {
                 </View>
             </View>
         </Animated.View>
-        <Footer />
+        <Footer width={width} widthLimit={widthLimit} />
     </View>)
 
 }
