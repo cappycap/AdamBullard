@@ -388,6 +388,7 @@ export const services = StyleSheet.create({
     backgroundColor:colors.secondaryBackground,
     alignItems:'center',
     marginBottom:20,
+    flex:1,
   },
   boxSpacer: {
     width:50
