@@ -101,7 +101,6 @@ export default function Papers(props) {
     const [paperIndex, setPaperIndex] = useState(null)
     const [papersData, setPapersData] = useState(data)
 
-    
     useEffect(() => {
 
         // Check to see if short exists.
@@ -171,7 +170,7 @@ export default function Papers(props) {
                     {papersData.map((paper, index) => {
                         return (<TouchableOpacity style={styles.paperContainer} onPress={() => viewPaper(index)}>
                             <Image 
-                                style={[styles.paperImage,{width:width-40}]}
+                                style={[styles.paperImage]}
                                 source={paper.Image}
                             />
                             <View style={styles.paperInner}>
@@ -217,7 +216,7 @@ export default function Papers(props) {
                                 </View>)}
                             </View>
                             <Image 
-                                style={[styles.paperImageLarge,{width:width-40}]}
+                                style={width <= widthLimit && [styles.paperImageLarge,{width:width-40}] || [styles.paperImageLarge]}
                                 source={papersData[paperIndex].Image}
                             />
                         </View>
