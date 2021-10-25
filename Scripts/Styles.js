@@ -411,6 +411,40 @@ export const services = StyleSheet.create({
   }
 })
 
+export const portfolioMobile = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    padding:0,
+    backgroundColor:colors.secondaryBackground
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:22,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'justify'
+  },
+  lower: {
+    padding:10,
+    flex:1,
+  },
+})
+
 export const portfolio = StyleSheet.create({
   container: {
     flex:1,
@@ -448,6 +482,126 @@ export const portfolio = StyleSheet.create({
     paddingTop:50,
     paddingBottom:50,
     flex:1,
+  },
+})
+
+export const papersMobile = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    backgroundColor:colors.secondaryBackground
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:22,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3,
+    marginBottom:5
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  titleText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:22,
+    color:colors.mainTextColor,
+    marginTop:10
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'left'
+  },
+  lower: {
+    paddingLeft:20,
+    paddingRight:20,
+    paddingBottom:20,
+    paddingTop:10,
+    flex:1,
+  },
+  paperContainer: {
+    backgroundColor:colors.secondaryBackground,
+    borderRadius:20,
+    marginBottom:20
+  },
+  paperImage: {
+    height:200,
+    borderTopLeftRadius:20,
+    borderTopRightRadius:20,
+  },
+  paperInner: {
+    padding:20,
+  },
+  link: {
+    color:btnColors.primary,
+    marginLeft:5,
+    opacity:1
+  },
+  paperNotFound: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  titleRow: {
+    flexDirection:'column',
+    alignItems:'flex-start',
+  },
+  paperTop: {
+    flexDirection:'column',
+    marginBottom:20,
+    borderBottomWidth:2,
+    borderBottomColor:colors.secondaryBackground,
+    paddingBottom:20
+  },
+  paperTopInfo: {
+    flex:1,
+    justifyContent: 'space-between'
+  },
+  paperImageLarge: {
+    width:500,
+    height:250,
+    borderRadius:20,
+    marginTop:10
+  },
+  viewPdfButton: {
+    backgroundColor:btnColors.primary,
+    borderRadius:10,
+    paddingLeft:20,
+    paddingRight:20,
+    paddingTop:10,
+    paddingLeft:20,
+    alignSelf:'flex-start'
+  },
+  viewPdfButtonTitle: {
+    fontFamily:'Poppins',
+    color:'#fff',
+    fontSize:20,
+    textAlign:'center'
+  },
+  paperSection: {
+    marginBottom:30
+  },
+  paperSectionImage: {
+    alignSelf:'center'
+  },
+  paperSectionCaption: {
+    fontFamily:'PoppinsItalic',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'center'
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    alignItems:'center',
+    paddingTop:10,
+    paddingBottom:10
   },
 })
 
@@ -573,6 +727,39 @@ export const papers = StyleSheet.create({
   },
 })
 
+export const contactMobile = StyleSheet.create({
+  container: {
+    flex:1,
+    backgroundColor:colors.mainBackground
+  },
+  upper: {
+    padding:0,
+    backgroundColor:colors.secondaryBackground
+  },
+  categoryText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:22,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    letterSpacing:3
+  },
+  bigText: {
+    fontFamily:'PoppinsSemiBold',
+    fontSize:26,
+    color:colors.mainTextColor,
+  },
+  pText: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:0.6,
+    textAlign:'justify'
+  },
+  lower: {
+    padding:10,
+    flex:1,
+  },
+})
 
 export const contact = StyleSheet.create({
   container: {

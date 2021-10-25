@@ -53,7 +53,7 @@ export default function Header(props) {
             </Text>
             {props.width <= props.widthLimit && (<View>
                 <Icon
-                    name='menu'
+                    name={showMobileMenu && 'close' || 'menu'}
                     type='ionicon'
                     size={28}
                     color={colors.mainTextColor}

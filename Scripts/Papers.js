@@ -5,10 +5,11 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { Button, Icon } from 'react-native-elements'
-import { papers, colors } from './Styles.js'
+import { papers, papersMobile, colors } from './Styles.js'
 
 import Header from './Shared/Header.js'
 import Footer from './Shared/Footer.js'
+import useWindowDimensions from './Shared/useWindowDimensions.js'
 
 const data = [
     {
@@ -79,17 +80,32 @@ export default function Papers(props) {
 
     const linkTo = useLinkTo()
 
+    // Variables for handling styling.
+    const { height, width } = useWindowDimensions()
+    const [firstLoad, setFirstLoad] = useState(true)
     const [styles, setStyles] = useState(papers)
+    const widthLimit = 900
+
+    const widthCheck = () => {
+        console.log('widthCheck at ' + width)
+        if (width <= widthLimit) {
+            setStyles(papersMobile)
+        } else {
+            setStyles(papers)
+        }
+    }
+
     const [fadeAnim, setFadeAnim] = useState(new Animated.Value(0))
 
     const [short, setShort] = useState(null)
     const [paperIndex, setPaperIndex] = useState(null)
     const [papersData, setPapersData] = useState(data)
 
+    
     useEffect(() => {
 
         // Check to see if short exists.
-        if (props.route.params != undefined) {
+        if (props.route.params != undefined && firstLoad) {
             // Save short.
             setShort(props.route.params.short)
             // Check to see if this paper exists.
@@ -101,9 +117,13 @@ export default function Papers(props) {
             }
         }
 
-        fadeIn()
+        if (firstLoad) {
+            fadeIn()
+            setFirstLoad(false)
+        }
+        widthCheck()
 
-    }, [])
+    }, [width])
 
     const fadeIn = () => {
         Animated.timing(fadeAnim, {
@@ -124,10 +144,6 @@ export default function Papers(props) {
         setShort(null)
     }
 
-    const headerState = {
-        currentPage: 'Papers'
-    }
-
     const downloadFile = async () => {
 
         const fileName = "papers";
@@ -145,7 +161,7 @@ export default function Papers(props) {
 
     return (<View style={styles.container}>
         <View style={styles.upper}>
-            <Header {...headerState} />
+            <Header currentPage={'Papers'} width={width} widthLimit={widthLimit} />
         </View>
         <Animated.View style={[styles.lower,{opacity:fadeAnim}]}>
             {papersData.length > 0 && (<View>
@@ -155,7 +171,7 @@ export default function Papers(props) {
                     {papersData.map((paper, index) => {
                         return (<TouchableOpacity style={styles.paperContainer} onPress={() => viewPaper(index)}>
                             <Image 
-                                style={styles.paperImage}
+                                style={[styles.paperImage,{width:width-40}]}
                                 source={paper.Image}
                             />
                             <View style={styles.paperInner}>
@@ -191,17 +207,17 @@ export default function Papers(props) {
                                     </View>
                                     <Text style={styles.pText}>{papersData[paperIndex].Description}</Text>
                                 </View>
-                                <View style={styles.buttonRow}>
+                                {width >= widthLimit && (<View style={styles.buttonRow}>
                                     <Button 
                                         title={'Download JSON'}
                                         buttonStyle={styles.viewPdfButton}
                                         titleStyle={styles.viewPdfButtonTitle}
                                         onPress={() => downloadFile()}
                                     />
-                                </View>
+                                </View>)}
                             </View>
                             <Image 
-                                style={styles.paperImageLarge}
+                                style={[styles.paperImageLarge,{width:width-40}]}
                                 source={papersData[paperIndex].Image}
                             />
                         </View>
@@ -218,7 +234,7 @@ export default function Papers(props) {
                                 </View>)
                             } else {
                                 return (<View style={styles.paperSection} key={'paperSection_'+index}>
-                                    <Image source={section.Link} style={[styles.paperSectionImage,{width:section.Width,height:section.Height}]} />
+                                    <Image source={section.Link} style={[styles.paperSectionImage,{width:width-40,height:((width-40)*(section.Height/section.Width))}]} />
                                     <Text style={styles.paperSectionCaption}>{section.Caption}</Text>
                                 </View>)
                             }
@@ -230,7 +246,7 @@ export default function Papers(props) {
                 <Text style={styles.categoryText}>No papers yet, check back later!</Text>
             </View>)}
         </Animated.View>
-        <Footer />
+        <Footer width={width} widthLimit={widthLimit} />
     </View>)
 
 }
