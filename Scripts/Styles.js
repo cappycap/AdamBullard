@@ -432,18 +432,44 @@ export const portfolioMobile = StyleSheet.create({
     fontFamily:'PoppinsSemiBold',
     fontSize:26,
     color:colors.mainTextColor,
+    textAlign:'center'
   },
   pText: {
     fontFamily:'Poppins',
     fontSize:20,
     color:colors.mainTextColor,
     opacity:0.6,
-    textAlign:'justify'
+    textAlign:'center',
+    marginBottom:10
   },
   lower: {
     padding:10,
     flex:1,
   },
+  projects: {
+    alignItems: 'center',
+  },
+  projectContainer: {
+    padding:10,
+  },
+  project: {
+    backgroundColor:colors.secondaryBackground,
+    padding:20,
+    borderRadius:10,
+    alignItems:'center',
+    justifyContent: 'center',
+    flex:1
+  },
+  projectImage: {
+    width:80,
+    height:80,
+    borderRadius:60
+  },
+  viewButton: {
+    borderRadius:10,
+    backgroundColor:btnColors.info,
+    marginTop:10
+  }
 })
 
 export const portfolio = StyleSheet.create({
@@ -475,7 +501,8 @@ export const portfolio = StyleSheet.create({
     fontSize:20,
     color:colors.mainTextColor,
     opacity:0.6,
-    textAlign:'justify'
+    textAlign:'center',
+    marginBottom:10
   },
   lower: {
     paddingLeft:100,
@@ -484,6 +511,34 @@ export const portfolio = StyleSheet.create({
     paddingBottom:50,
     flex:1,
   },
+  projects: {
+    flexDirection:'row',
+    flexWrap:'wrap',
+    flex:1,
+    justifyContent: 'center',
+  },
+  projectContainer: {
+    flexBasis:'33%',
+    padding:10,
+  },
+  project: {
+    backgroundColor:colors.secondaryBackground,
+    padding:20,
+    borderRadius:10,
+    alignItems:'center',
+    justifyContent: 'space-between',
+    flex:1
+  },
+  projectImage: {
+    width:80,
+    height:80,
+    borderRadius:60
+  },
+  viewButton: {
+    borderRadius:10,
+    backgroundColor:btnColors.info,
+    marginTop:10
+  }
 })
 
 export const papersMobile = StyleSheet.create({
@@ -754,12 +809,22 @@ export const contactMobile = StyleSheet.create({
     fontSize:20,
     color:colors.mainTextColor,
     opacity:0.6,
-    textAlign:'justify'
+    textAlign:'left'
+  },
+  pTextLink: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:1,
+    textAlign:'left'
   },
   lower: {
     padding:10,
     flex:1,
   },
+  contactSection: {
+    marginBottom:20
+  }
 })
 
 export const contact = StyleSheet.create({
@@ -771,6 +836,7 @@ export const contact = StyleSheet.create({
     paddingTop:50,
     paddingLeft:50,
     paddingRight:50,
+    paddingBottom:20,
     backgroundColor:colors.secondaryBackground
   },
   categoryText: {
@@ -792,6 +858,13 @@ export const contact = StyleSheet.create({
     opacity:0.6,
     textAlign:'justify'
   },
+  pTextLink: {
+    fontFamily:'Poppins',
+    fontSize:20,
+    color:colors.mainTextColor,
+    opacity:1,
+    textAlign:'justify'
+  },
   lower: {
     paddingLeft:100,
     paddingRight:100,
@@ -799,6 +872,9 @@ export const contact = StyleSheet.create({
     paddingBottom:50,
     flex:1,
   },
+  contactSection: {
+    marginBottom:20
+  }
 })
 
 

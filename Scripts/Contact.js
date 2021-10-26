@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer, useLinkTo } from '@react-navigation/native'
 import { useFonts } from 'expo-font'
 import { Button } from 'react-native-elements'
-import { contact, contactMobile, colors } from './Styles.js'
+import { contact, contactMobile, colors, btnColors } from './Styles.js'
 
 import Header from './Shared/Header.js'
 import Footer from './Shared/Footer.js'
@@ -52,7 +52,17 @@ export default function Contact() {
         </View>
         <Animated.View style={[styles.lower,{opacity:fadeAnim}]}>
             <Text style={styles.categoryText}>- Contact Me</Text>
-            <Text style={[styles.pText,{marginBottom:20}]}>This is a new site I made for CSCI 397A, so my contact form is coming soon! For now, you can reach me at bullara2@wwu.edu.</Text>
+            <Text style={[styles.pText,{marginBottom:20}]}>Feel free to reach out on any social media above, or shoot me an email!</Text>
+            <View style={styles.contactSections}>
+                <View style={styles.contactSection}>
+                    <Text style={styles.bigText}>Business Email</Text>
+                    <Text style={styles.pTextLink}><a href="mailto:adam@coachsync.me" style={{color:btnColors.primary,opacity:1}}>adam@coachsync.me</a></Text>
+                </View>
+                <View style={styles.contactSection}>
+                    <Text style={styles.bigText}>Academic Email</Text>
+                    <Text style={styles.pTextLink}><a href="mailto:bullara2@wwu.edu" style={{color:btnColors.primary,opacity:1}}>bullara2@wwu.edu</a></Text>
+                </View>
+            </View>
         </Animated.View>
         <Footer width={width} widthLimit={widthLimit} />
     </View>)
