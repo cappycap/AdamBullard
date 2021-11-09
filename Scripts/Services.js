@@ -44,7 +44,7 @@ export default function Services() {
             setFirstLoad(false)
             setTimeout(() => {
                 widthCheck()
-            }, 700)
+            }, 300)
         }
         widthCheck()
     }, [width])
