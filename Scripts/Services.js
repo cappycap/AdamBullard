@@ -42,7 +42,9 @@ export default function Services() {
         if (firstLoad) {
             fadeIn()
             setFirstLoad(false)
-            widthCheck()
+            setTimeout(() => {
+                widthCheck()
+            }, 1000)
         }
         widthCheck()
     }, [width])
