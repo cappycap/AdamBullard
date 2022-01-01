@@ -128,11 +128,26 @@ export default function Services() {
                     <Text style={[styles.pText,styles.textCentered]}>Helping test and build the latest blockchain technologies.</Text>
                     <View style={styles.languageImageRow}>
                         <Image 
-                            source={require('../assets/crypto/solidity.png')}
-                            style={[styles.languageImage]}
+                            source={require('../assets/crypto/web3.png')}
+                            style={[styles.languageImage,{marginRight:7}]}
+                        />
+                        <Image 
+                            source={require('../assets/crypto/metaplex.png')}
+                            style={[styles.languageImage,{marginLeft:7}]}
                         />
                     </View>
-                    <Text style={[styles.pText,styles.textCentered]}>Solidity Smart Contracts</Text>
+                    <Text style={[styles.pText,styles.textCentered]}>Web3.js and NFT Candy Machines</Text>
+                    <View style={styles.languageImageRow}>
+                        <Image 
+                            source={require('../assets/crypto/solidity.png')}
+                            style={[styles.languageImage,{marginRight:7}]}
+                        />
+                        <Image 
+                            source={require('../assets/crypto/rust.png')}
+                            style={[styles.languageImage,{marginLeft:7}]}
+                        />
+                    </View>
+                    <Text style={[styles.pText,styles.textCentered]}>SOL/ETH Smart Contracts</Text>
                 </View>
                 <View style={styles.boxSpacer}></View>
                 <View style={[styles.box]}>
